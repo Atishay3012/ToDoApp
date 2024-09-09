@@ -1,21 +1,11 @@
+/* General App Styling */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +14,188 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ToDoApp Component Styling */
+.todo-app {
+  padding: 30px; /* Increased padding */
+  max-width: 900px; /* Increased width */
+  margin: 20px auto; /* Increased margin */
+  border-radius: 15px; /* Circular corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 15px 25px; /* Increased padding */
+  border-radius: 15px; /* Circular corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+}
+
+.create-task-button {
+  padding: 10px 20px; /* Increased padding */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px; /* Circular corners */
+  cursor: pointer;
+  font-size: 18px; /* Increased font size */
+}
+
+.create-task-button:hover {
+  background-color: #0056b3;
+}
+
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 15px; /* Circular corners */
+  max-width: 500px;
+  width: 100%;
+  position: relative; /* Ensure content is properly positioned */
+  z-index: 1001; /* Ensure it is above the overlay */
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.popup-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.popup-content input,
+.popup-content textarea,
+.popup-content select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px; /* Circular corners */
+  border: 1px solid #ccc;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px; /* Circular corners */
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.popup-buttons button:first-of-type {
+  background-color: #ccc;
+}
+
+.popup-buttons button:last-of-type {
+  background-color: #007bff;
+  color: white;
+}
+
+.popup-buttons button:last-of-type:hover {
+  background-color: #0056b3;
+}
+
+/* TaskBoard Styling */
+.task-board {
+  display: flex;
+  flex-direction: column; /* Changed to column layout */
+  align-items: center; /* Center aligned */
+  padding: 20px;
+}
+
+.task-board > .todo-app {
+  margin-bottom: 20px; /* Space between ToDoApp and columns */
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px; /* Increased padding */
+  border-radius: 15px; /* Circular corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Added to allow positioning of priority badges */
+}
+
+.todo {
+  background-color: #e0c3fc;
+}
+
+.in-progress {
+  background-color: #ffddc1;
+}
+
+.completed {
+  background-color: #c8e6c9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.task-card {
+  position: relative; /* Added to position priority badge */
+  background-color: white;
+  padding: 15px; /* Increased padding */
+  margin-bottom: 15px;
+  border-radius: 15px; /* Circular corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-card h3 {
+  margin-top: 0;
+}
+
+.task-card p {
+  margin: 5px 0;
+}
+
+/* Priority Badge Styling */
+.priority-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px; /* Circular corners */
+  background-color: red; /* Default color, overridden by inline styles */
+  font-size: 12px; /* Smaller font size */
 }
